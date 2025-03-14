@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: var(--mantine-color-red-7);
+  --secondary-color: var(--mantine-color-gray-9);
+  --accent-color: var(--mantine-color-gray-1);
+  --background-color: var(--mantine-color-gray-9);
+  --text-color: var(--mantine-color-gray-9);
+  --light-gray: var(--mantine-color-gray-7);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.suggestedItem{
+  border-radius: var(--mantine-radius-md);
+}
+.suggestedItemx{
+  border-radius: var(--mantine-radius-md);
+  background: var(--mantine-color-gray-3);
+}
+.suggestedItem:hover{
+  background: var(--mantine-color-gray-1);
+}
