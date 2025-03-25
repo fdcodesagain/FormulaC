@@ -5,9 +5,9 @@ import { createTheme } from "@mantine/core";
 export const theme = createTheme({
   /* Put your mantine theme override here */
   fontSmoothing: true,
-  primaryColor: "dark",
+  primaryColor: "gray",
   defaultRadius: "md",
-  primaryShade: 6,
+  primaryShade: 7,
   shadows: {
     sm: "none",
     md: "none",

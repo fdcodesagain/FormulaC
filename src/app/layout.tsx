@@ -3,9 +3,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "../../public/globals.css";
 import "@mantine/core/styles.css";
-import { Container, MantineProvider } from "@mantine/core";
+import { Box, Container, MantineProvider } from "@mantine/core";
 import { theme } from "../../theme";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,14 +24,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const queryClient = new QueryClient();
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <QueryClientProvider client={queryClient}>
-          <MantineProvider theme={theme}>
-            <Container size={"xl"} p={0}>
+          <MantineProvider theme={theme} defaultColorScheme={"dark"} forceColorScheme="dark">
+            <Box bg={"#000"} p={{ base: "xs", md: "0" }} pos={"relative"} size={1600}>
+              <Navbar />
               {children}
-            </Container>
+            </Box>
           </MantineProvider>
         </QueryClientProvider>
       </body>
