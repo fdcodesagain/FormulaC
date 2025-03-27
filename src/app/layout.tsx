@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <QueryClientProvider client={queryClient}>
           <MantineProvider theme={theme} defaultColorScheme={"dark"} forceColorScheme="dark">
-            <Box bg={"#000"} p={{ base: "xs", md: "0" }} pos={"relative"} size={1600}>
+            <Box bg={"#17171b"} size={1600}>
               <Navbar />
               {children}
             </Box>

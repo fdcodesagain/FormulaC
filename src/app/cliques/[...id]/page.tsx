@@ -1,27 +1,9 @@
 "use client";
 
 import CliqueCard from "@/components/CliqueCard";
-import { Avatar, Badge, Box, Button, Card, Checkbox, Container, Divider, Flex, Grid, GridCol, Rating, SimpleGrid, Stack, Text, Title } from "@mantine/core";
-import { IconAsterisk, IconBolt, IconBoltFilled, IconBookmark, IconCampfire, IconLocation, IconLock, IconLockOpen, IconMapPin, IconSkull, IconStar, IconUrgent, IconUserPlus, IconUsers } from "@tabler/icons-react";
-import { Atomic_Age, Baumans, Genos } from "next/font/google";
-
-export const bubbly = Atomic_Age({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-export const baum = Baumans({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-export const genos = Genos({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
+import { Badge, Box, Card, Container, Flex, Rating, Stack, Text, Title } from "@mantine/core";
+import { IconBolt, IconBoltFilled, IconSkull } from "@tabler/icons-react";
+import { genos } from "@/app/page";
 
 export const cliques = [
   {
@@ -87,8 +69,8 @@ export const cliques = [
   },
 ];
 
-export default function Home() {
-  const clique = cliques[0];
+export default function Home({ params }: { params: { id: string } }) {
+  const clique = cliques.find((c) => c.id === Number(params.id)) || cliques[0];
 
   const viewer = {
     hasHouse: true,
@@ -209,101 +191,4 @@ export default function Home() {
       </Flex>
     </Container>
   );
-}
-
-// "use client";
-
-// import { Container, Text, NumberFormatter, Box, Image, Flex, Progress } from "@mantine/core";
-// import { IconFlame } from "@tabler/icons-react";
-// import { useEffect, useState } from "react";
-
-// export default function Home() {
-//   const [totalSeconds, setTotalSeconds] = useState(0); // 12 hours in seconds (12 * 3600)
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setTotalSeconds((prev) => prev + 100); // Add 100 seconds every second
-//     }, 1000);
-
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   const currentSeconds = totalSeconds % 86400; // Wrap around at 24 hours
-//   const progressPercentage = (currentSeconds / 86400) * 100;
-//   const hours = Math.floor(currentSeconds / 3600);
-//   const minutes = Math.floor((currentSeconds % 3600) / 60);
-//   const seconds = currentSeconds % 60;
-
-//   return (
-//     <Container p={"sm"} size={"100%"} pos={"relative"}>
-//       <Box style={{ flex: 1 }}>
-//         <Flex justify={"space-between"} align={"center"}>
-//           <Text fw={100} size={"xl"} pb={"xs"} lh={1} mt={"-.25rem"}>
-//             Day: <NumberFormatter value={365 * 29} thousandSeparator />
-//             <Text span lh={0} ml={".25rem"}>
-//               <IconFlame style={{ marginBottom: "-.25rem" }} color="var(--mantine-color-orange-6)" />
-//             </Text>
-//           </Text>
-//           <Text size="sm" mb="xs">
-//             {`${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`}
-//           </Text>
-//         </Flex>
-//         <Progress color="gray" value={progressPercentage} size="lg" mb="md" />
-//       </Box>
-
-//       <Flex>Money: $5</Flex>
-
-//       <Image pos={"absolute"} top={"0%"} pt={"xs"} right={"0"} w={200} h={300} style={{ transform: "scaleX(-1)" }} src={"https://i.redd.it/snoovatar/avatars/c6f8c0ab-4ef1-49c5-8409-16b328a62ec6.png"} />
-//     </Container>
-//   );
-// }
-
-{
-  /* <Text size="xl" fw={100} lh={1}>
-          $30
-        </Text> */
-}
-{
-  /* <Text>What u want from life?</Text>
-        <Flex wrap={"wrap"} gap={".25rem"} maw={"60%"} pb={"xs"}>
-          <Badge color="white" c={"dark"}>
-            Tranquility
-          </Badge>
-          <Badge>Chaos</Badge>
-          <Badge color="pink">Love</Badge>
-        </Flex> */
-}
-
-{
-  /* <Text>What u want from life?</Text>
-        <Flex wrap={"wrap"} gap={".25rem"} maw={"60%"}>
-          <Badge color="white" c={"dark"}>
-            Tranquility
-          </Badge>
-          <Badge>Chaos</Badge>
-          <Badge color="pink">Love</Badge>
-        </Flex> */
-}
-{
-  /* <Text size="xl" pb={"xs"} fw={100} lh={1}>
-          Wealth: $0
-        </Text>
-        <Text size="xl" pb={"xs"} fw={100} lh={1}>
-          Allience: 3
-        </Text>
-        <Text size="xl" pb={"xs"} fw={100} lh={1}>
-          Culture: Coil
-        </Text>
-        <Text size="xl" pb={"xs"} fw={100} lh={1}>
-          Title: Engineer
-        </Text>
-        <Text size="xl" pb={"xs"} fw={100} lh={1}>
-          Health: Good
-        </Text>
-        <Text size="xl" pb={"xs"} fw={100} lh={1}>
-          Happiness: Good
-        </Text> */
-}
-{
-  /* <Switch mt={"xs"} size="md" checked={is24HourFormat} onChange={(event) => setIs24HourFormat(event.currentTarget.checked)} /> */
 }

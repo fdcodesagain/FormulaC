@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* --text-color: var(--mantine-color-gray-0); */
-  /* --primary-color: var(--mantine-color-red-7); */
-  /* --secondary-color: var(--mantine-color-gray-9); */
-  /* --accent-color: var(--mantine-color-gray-1); */
-  /* --background-color: var(--mantine-color-gray-9); */
-  /* --light-gray: var(--mantine-color-gray-7); */
   --c1:#000000;
   --c2:#37372D;
   --c3:#525246;
@@ -15,9 +9,13 @@
   --c6:#3F90AD;
 }
 
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Genos', sans-serif;
+}
+
 ::selection {
   background-color: var(--c6);
-  color: var(--c4);
+  color: var(--c5);
 }
 
 
@@ -33,10 +31,19 @@ body {
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
-  background: var(--c1);
+  background: #17171b;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.mantine-TextInput-input{
+  display: none;
+  color: var(--c6);
+}
+
+input::placeholder {
+  color: var(--c4) !important;
 }
